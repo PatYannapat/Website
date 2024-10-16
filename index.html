@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="nav__header">
+            <div class="nav__logo">
+              <a href="#">LOGO</a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+                  </svg>
+            </div>
+          </div>
+          <ul class="nav__links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#Laptop">Laptop</a></li>
+            <li><a href="#Chair">Chair</a></li>
+            <li><a href="#Table">Table</a></li>
+            <div class="icon-cart" onclick="openCart()">
+              <a href="#">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+          </svg>
+                  <span>0</span>
+              </a>
+          </div>
+          </ul>
+        </nav>
+        <!-- Cart Modal -->
+        <div id="cartModal" class="modal">
+          <div class="modal-content">
+              <span class="close" onclick="closeCart()">&times;</span>
+              <h2>Your Cart</h2>
+              <ul id="cartItems">
+                  <!-- Cart items will be displayed here -->
+              </ul>
+              <button onclick="checkout()"><a href="login.html">Checkout</a></button>
+          </div>
+        </div>
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="Search...">
+          <button onclick="search()">Search</button>
+        </div>
+        <ul id="resultsList">
+          <!-- Results will be displayed here -->
+        </ul>
+        <div class="header__container" id="home">
+          <div class="box">
+            <span style="--i:1"><img src="images/222.jpg"></span>
+            <span style="--i:2"><img src="images/222.jpg"></span>
+            <span style="--i:3"><img src="images/222.jpg"></span>
+            <span style="--i:4"><img src="images/222.jpg"></span>
+            <span style="--i:5"><img src="images/222.jpg"></span>
+            <span style="--i:6"><img src="images/222.jpg"></span>
+            <span style="--i:7"><img src="images/222.jpg"></span>
+            <span style="--i:8"><img src="images/222.jpg"></span>
+            <span style="--i:9"><img src="images/222.jpg"></span>
+            <span style="--i:10"><img src="images/222.jpg"></span>
+          </div>
+        </div>
+    </header>
+    <div class="container">
+      <h1 style="margin: 20px;">Laptop</h1>
+        <div class="products" id="Laptop">
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 1', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 6000, 'images/1.1.png')"><img src="images/1.1.png" alt=""></div>
+                <div class="products-name"><h2>Gaming Laptop 1</h2></div>
+                <div class="products-price">$199</div>
+                <button class="addCart">Add To Cart</button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 2', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 16610, 'images/1.2.webp')"><img src="images/1.2.webp" alt=""></div>
+                <div class="products-name"><h2>Gaming Laptop 2</h2></div>
+                <div class="products-price">$499</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 3', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 10950, 'images/1.3.png')"><img src="images/1.3.png" alt=""></div>
+                <div class="products-name"><h2>musda</h2></div>
+                <div class="products-price">$329</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 4', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 18300, 'images/1.4.webp')"><img src="images/1.4.webp" alt=""></div>
+                <div class="products-name"><h2>fefe</h2></div>
+                <div class="products-price">$549</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 5', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 16600, 'images/1.5.webp')"><img src="images/1.5.webp" alt=""></div>
+                <div class="products-name"><h2>Gaming Laptop 3</h2></div>
+                <div class="products-price">$499</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 6', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 6630, 'images/1.6.webp')"><img src="images/1.6.webp" alt=""></div>
+                <div class="products-name"><h2>hahaaa</h2></div>
+                <div class="products-price">$199</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 7', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 6000, 'images/1.7.webp')"><img src="images/1.7.webp" alt=""></div>
+                <div class="products-name"><h2>Gaming Laptop 4</h2></div>
+                <div class="products-price">$199</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 8', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 5900, 'images/1.8.webp')"><img src="images/1.8.webp" alt=""></div>
+                <div class="products-name"><h2>Gaming Laptop 5</h2></div>
+                <div class="products-price">$179</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 9', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 8300, 'images/1.9.webp')"><img src="images/1.9.webp" alt=""></div>
+                <div class="products-name"><h2>Gaming Laptop 6</h2></div>
+                <div class="products-price">$249</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 10', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 8500, 'images/1.10.png')"><img src="images/1.10.png" alt=""></div>
+                <div class="products-name"><h2>Gaming Laptop 7</h2></div>
+                <div class="products-price">$255</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 11', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 4300, 'images/1.11.webp')"><img src="images/1.11.webp" alt=""></div>
+                <div class="products-name"><h2>haiyaa</h2></div>
+                <div class="products-price">$129</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+            <div class="products-item">
+                <div class="products-img" onclick="showPopup('สินค้า 12', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 14150, 'images/1.12.webp')"><img src="images/1.12.webp" alt=""></div>
+                <div class="products-name"><h2>muhaha</h2></div>
+                <div class="products-price">$425</div>
+                <button class="addCart">Add To Cart </button>
+            </div>
+        </div>
+        <h1 style="margin: 20px;">Chair</h1>
+        <div class="products" id="Chair">
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 1', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 830, 'images/1.png')"><img src="images/1.png" alt=""></div>
+              <div class="products-name"><h2>Chair 1</h2></div>
+              <div class="products-price">$25</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 2', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 1500, 'images/2.png')"><img src="images/2.png" alt=""></div>
+              <div class="products-name"><h2>Chair 2</h2></div>
+              <div class="products-price">$45</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 3', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 4455, 'images/3.png')"><img src="images/3.png" alt=""></div>
+              <div class="products-name"><h2>Chair 3</h2></div>
+              <div class="products-price">$35</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 4', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 1544, 'images/4.png')"><img src="images/4.png" alt=""></div>
+              <div class="products-name"><h2>Chair 4</h2></div>
+              <div class="products-price">$50</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 5', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 116545, 'images/5.png')"><img src="images/5.png" alt=""></div>
+              <div class="products-name"><h2>Chair 5</h2></div>
+              <div class="products-price">$49</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 6', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 145844, 'images/6.png')"><img src="images/6.png" alt=""></div>
+              <div class="products-name"><h2>Chair 6</h2></div>
+              <div class="products-price">$25</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 7', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 4454, 'images/7.png')"><img src="images/7.png" alt=""></div>
+              <div class="products-name"><h2>Chair 7</h2></div>
+              <div class="products-price">$5</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 8', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 454452, 'images/8.png')"><img src="images/8.png" alt=""></div>
+              <div class="products-name"><h2>Chair 8</h2></div>
+              <div class="products-price">$65</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 9', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 5445, 'images/9.webp')"><img src="images/9.webp" alt=""></div>
+              <div class="products-name"><h2>Chair 9</h2></div>
+              <div class="products-price">$29</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 10', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 4548, 'images/10.png')"><img src="images/10.png" alt=""></div>
+              <div class="products-name"><h2>Chair 10</h2></div>
+              <div class="products-price">$39</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 11', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 887845451121, 'images/11.png')"><img src="images/11.png" alt=""></div>
+              <div class="products-name"><h2>Chair 11</h2></div>
+              <div class="products-price">$50,000</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+          <div class="products-item">
+              <div class="products-img" onclick="showPopup('สินค้า 12', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 54584, 'images/12.png')"><img src="images/12.png" alt=""></div>
+              <div class="products-name"><h2>Chair 12</h2></div>
+              <div class="products-price">$59</div>
+              <button class="addCart">Add To Cart </button>
+          </div>
+      </div>
+      <h1 style="margin: 20px;">Table</h1>
+      <div class="products" id="Table">
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 1', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 1545, 'images/123.424.png')"><img src="images/123.424.png" alt=""></div>
+            <div class="products-name"><h2>Table 1</h2></div>
+            <div class="products-price">$35</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 2', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 16444, 'images/A_100MPWH.webp.png')"><img src="images/A_100_MPWH.webp" alt=""></div>
+            <div class="products-name"><h2>Table 2</h2></div>
+            <div class="products-price">$39</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 3', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 11555, 'images/ab5e4f073840a91b2479da13e7e39cd8.png')"><img src="images/ab5e4f073840a91b2479da13e7e39cd8.png" alt=""></div>
+            <div class="products-name"><h2>Table 3</h2></div>
+            <div class="products-price">$45</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 4', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 2654, 'images/Benching.png')"><img src="images/Benching.webp" alt=""></div>
+            <div class="products-name"><h2>Table 4</h2></div>
+            <div class="products-price">$30</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 5', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 8745, 'images/DCT-200.png')"><img src="images/DCT-200.png" alt=""></div>
+            <div class="products-name"><h2>Table 5</h2></div>
+            <div class="products-price">$55</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 6', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 6524, 'images/INDESK_Dual_motor_Ergo_Curve.png')"><img src="images/INDESK_Dual_motor_Ergo_Curve.png" alt=""></div>
+            <div class="products-name"><h2>Table 6</h2></div>
+            <div class="products-price">$59</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 7', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 4845, 'images/lp_ac_1260_a3_1.png')"><img src="images/lp_ac_1260_a3_1.webp" alt=""></div>
+            <div class="products-name"><h2>Table 7</h2></div>
+            <div class="products-price">$60</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 8', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 4544, 'images/md001.png')"><img src="images/md001.png" alt=""></div>
+            <div class="products-name"><h2>Table 8</h2></div>
+            <div class="products-price">$65</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 9', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 122313, 'images/reno-1.png')"><img src="images/reno-1.png" alt=""></div>
+            <div class="products-name"><h2>Table 9</h2></div>
+            <div class="products-price">$69</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 10', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 58484, 'images/SQB-160-80-ขาว-ขาขาว-600x600.png')"><img src="images/SQB-160-80-ขาว-ขาขาว-600x600.png" alt=""></div>
+            <div class="products-name"><h2>Table 10</h2></div>
+            <div class="products-price">$75</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 11', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 1232, 'images/ST1202-CB.png')"><img src="images/ST1202-CB.png" alt=""></div>
+            <div class="products-name"><h2>Table 11</h2></div>
+            <div class="products-price">$79</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+        <div class="products-item">
+            <div class="products-img" onclick="showPopup('สินค้า 12', 'รายละเอียดสินค้า : สินค้าหมดชั่วคราว', 4545, 'images/5.png', 'images/1.png')"><img src="images/01_61-1260-NO-BG.webp" alt=""></div>
+            <div class="products-name"><h2>Table 12</h2></div>
+            <div class="products-price">$100</div>
+            <button class="addCart">Add To Cart </button>
+        </div>
+    </div>
+    </div>
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <img id="popup-image" src="" alt="Product Image" style="width: 100%; height: auto; margin-bottom: 10px;">
+        <h2 id="popup-title"></h2>
+        <p id="popup-description"></p>
+        <p id="popup-price"></p>
+        <button class="buy-button" onclick="buyProduct(event)">Add To Cart</button>
+        <button class="close" onclick="closePopup()">ปิด</button> <!-- ปุ่มปิดที่นี่ -->
+    </div>
+
+    <footer>
+        <div class="section__container footer__container">
+          <div class="footer__col">
+            <h4>Laptop</h4>
+            <ul class="footer__links">
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Chair</h4>
+            <ul class="footer__links">
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Table</h4>
+            <ul class="footer__links">
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+              <li><a href="#">xxxxxx</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Follow Us</h4>
+            <ul class="footer__socials">
+              <li>
+                <a href="#" target="_blank"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/>
+                </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z" clip-rule="evenodd"/>
+                </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bar">
+          @Yannapat Tounpongkai. @Pasuthorn Proongkiat. @Kritsadin Setthahoduek.
+        </div>
+      </footer>
+    
+    <script src="Javascript/javascript.js"></script>
+    <script src="Javascript/search.js"></script>
+    <script src="Javascript/cart.js"></script>
+</body>
+</html>
